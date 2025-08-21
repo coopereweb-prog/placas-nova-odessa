@@ -1,4 +1,4 @@
-# Placas Nova Odessa - Sistema de Gestão de Placas de Rua
+# Placas de logradouro Nova Odessa - Sistema de Gestão de Placas de Rua
 
 Sistema web interativo para gerenciamento e comercialização de espaços publicitários em placas de identificação de logradouros na cidade de Nova Odessa, SP.
 
