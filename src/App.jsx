@@ -254,7 +254,7 @@ function App() {
           <div className="lg:col-span-3">
             <Card>
               <CardHeader>
-                <CardTitle>Mapa Interativo - Pontos de Instalação</CardTitle>
+                <CardTitle>Mapa para escolha de logradouros</CardTitle>
                 <CardDescription>
                   Clique nos marcadores para ver detalhes e fazer reservas
                 </CardDescription>
