@@ -2,26 +2,15 @@
 import React, { useState } from 'react';
 import MapaComSupabase from './components/MapaComSupabase'; // Componente que criaremos a seguir
 import { MapPointPopup } from './components/MapPointPopup'; // Seu componente de popup existente
-// import { CartItem } from './types/cart'; // Verifique o caminho correto para o seu tipo CartItem
-
-// Definição temporária de CartItem se você não tiver o arquivo types/cart.ts
-// Ou ajuste o import acima para o seu arquivo de tipos
-interface CartItem {
-  id: string;
-  name: string;
-  latitude: number;
-  longitude: number;
-  value: number;
-}
 
 function App() {
   const center = { lat: -22.9068, lng: -43.1729 }; // Centro padrão para Nova Odessa
   const zoom = 15;
 
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useState([]);
   const [selectedPoint, setSelectedPoint] = useState(null);
 
-  const handleAddToCart = (item: CartItem) => {
+  const handleAddToCart = (item) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
       if (existingItem) {
@@ -34,7 +23,7 @@ function App() {
     // setSelectedPoint(null); // Comentei para permitir adicionar mais
   };
 
-  const handleRemoveFromCart = (itemId: string) => {
+  const handleRemoveFromCart = (itemId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
   };
 
