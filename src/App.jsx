@@ -12,6 +12,7 @@ const mapContainerStyle = {
   height: '600px'
 }
 
+
 // Centro do mapa (Praça José Gazzetta - Nova Odessa)
 const center = {
   lat: -22.7856,
