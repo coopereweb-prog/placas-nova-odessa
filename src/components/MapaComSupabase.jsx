@@ -2,12 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { supabase } from '../integrations/supabase/client'; // Ajuste o caminho conforme necessário
 
-declare global {
-  interface Window {
-    google: typeof google;
-    initGoogleMap?: () => void;
-  }
-}
+// Removido: declare global { ... }
 
 const MapaComSupabase = ({ center, zoom, onPointClick }) => {
   const mapRef = useRef(null);
