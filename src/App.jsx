@@ -1,7 +1,7 @@
 // src/App.jsx
 import React, { useState } from 'react';
 import MapaComSupabase from './components/MapaComSupabase';
-import { MapPointPopup } from './components/MapPointPopup';
+import MapPointPopup from './components/MapPointPopup';
 
 function App() {
   const center = { lat: -22.9068, lng: -43.1729 };
