@@ -1,10 +1,10 @@
 // src/App.jsx
 import React, { useState } from 'react';
-import MapaComSupabase from './components/MapaComSupabase'; // Componente que criaremos a seguir
-import { MapPointPopup } from './components/MapPointPopup'; // Seu componente de popup existente
+import MapaComSupabase from './components/MapaComSupabase';
+import { MapPointPopup } from './components/MapPointPopup';
 
 function App() {
-  const center = { lat: -22.9068, lng: -43.1729 }; // Centro padrão para Nova Odessa
+  const center = { lat: -22.9068, lng: -43.1729 };
   const zoom = 15;
 
   const [cart, setCart] = useState([]);
@@ -14,13 +14,11 @@ function App() {
     setCart((prevCart) => {
       const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
       if (existingItem) {
-        return prevCart; // Já está no carrinho, não adiciona novamente
+        return prevCart;
       } else {
         return [...prevCart, item];
       }
     });
-    // Manter o popup aberto para permitir adicionar mais
-    // setSelectedPoint(null); // Comentei para permitir adicionar mais
   };
 
   const handleRemoveFromCart = (itemId) => {
@@ -28,13 +26,11 @@ function App() {
   };
 
   const handleViewCart = () => {
-    // Implementar lógica para exibir o carrinho completo
     console.log("Visualizar carrinho:", cart);
     alert("Funcionalidade de carrinho em desenvolvimento. Itens no carrinho: " + cart.length);
   };
 
   const handleGoToCheckout = () => {
-    // Implementar lógica para ir para o checkout
     console.log("Ir para o checkout:", cart);
     alert("Funcionalidade de checkout em desenvolvimento.");
   };
@@ -58,21 +54,19 @@ function App() {
       <MapaComSupabase
         center={center}
         zoom={zoom}
-        onPointClick={(point) => setSelectedPoint(point)} // Passa a função para setar o ponto selecionado
+        onPointClick={(point) => setSelectedPoint(point)}
       />
 
       {selectedPoint && (
         <MapPointPopup
           point={selectedPoint}
           onReservePoint={handleAddToCart}
-          onContinueReserving={handleClosePopup} // Fecha o popup após adicionar ao carrinho
+          onContinueReserving={handleClosePopup}
           onGoToCheckout={handleGoToCheckout}
           onClose={handleClosePopup}
         />
       )}
 
-      {/* Aqui você pode adicionar a interface do carrinho de compras */}
-      {/* Por enquanto, um placeholder simples */}
       {cart.length > 0 && (
         <div style={{ marginTop: '20px', borderTop: '1px solid #ccc', paddingTop: '10px' }}>
           <h2>Seu Carrinho de Compras</h2>
