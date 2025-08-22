@@ -2,8 +2,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { supabase } from '../integrations/supabase/client'; // Ajuste o caminho conforme necessário
 
-// Removido: declare global { ... }
-
 const MapaComSupabase = ({ center, zoom, onPointClick }) => {
   const mapRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
